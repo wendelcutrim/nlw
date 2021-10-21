@@ -4,8 +4,6 @@
 
 html, body {
     height: 100%;
-    /* Declarando variáveis em html/css, basta utilizar --nomeDaVariavel após realizar isso, para chamar a variável no css, basta inserir a propriedade que deseja alterar e colocar dentro da função var()
-    Exemplo abaixo com a cor gray*/
     --black: hsl(240,6%, 13%);
     --gray: hsl(240, 9%, 89%);
     --bgDesktop: hsl(240, 6%, 8%);
@@ -37,7 +35,7 @@ main {
 }
 
 .avatar {
-    /*Os rem em uma relação com o pixel padrão da página, o pixel padrão de fonte da página é de 16px ou seja, 1rem é = 16px, a altura do avatar no figma é 160px, 160/16 = 10rem, ou seja, rem = px/tamanho da fonte padrão */
+   
     width: 10rem;
     margin: 11.5rem auto 0;
     position: relative;
@@ -49,16 +47,12 @@ main {
     z-index: 1;
 }
 
-/* Ao aplicar o seletor padrão: .avatar img, o css irá buscar todas as imagens que estão na classe avatar e os valores serão aplicadas em todas. Como nesse caso temos 2 imagens (build e profile), ambas ficaram com os mesmos valores, ao usar o sinal de maior .avatar > img, o css irá aplicar o estilo nas imagens de primeiro nível ou seja, somente no profile, pq após a div ele não está atrelado em outra tag, como o build está dentro de um span que está dentro da div, ele passa a ser imagem de segundo nível */
 .avatar > img {
     width: 10rem;
     height: 11.5rem;
 
-    /*A propriedade object-fit: cover faz com que a imagem fique preenchida dentro da sua área, caso tirar ela, o tamanho não vai ficar proporcional devido ao width e height aplicado dentro desse estilo, esse atributo fará uma pequena correção para não ficar distoricido. */
     object-fit: cover;
 
-    /*O clip-path, serve para aplicar um molde a imagem, nesse caso iremos aplicar o poligono igual o do figma.
-    Para ajudar a desenvolver o poligono, basta acessar o site: https://bennettfeely.com/clippy/ e selecionar a figura mais próxima e vai "moldadndo" no olhometro, após terminar, copiar o css que ele gera e inserir dentro da função do polygon no clip-path */
     clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 
 }
