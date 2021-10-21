@@ -8,6 +8,7 @@ html, body {
     Exemplo abaixo com a cor gray*/
     --black: hsl(240,6%, 13%);
     --gray: hsl(240, 9%, 89%);
+    --bgDesktop: hsl(240, 6%, 8%);
 
 }
 
@@ -16,6 +17,7 @@ body {
     place-items: center;
     font-family: 'Roboto', sans-serif;
     -webkit-font-smootthing: antialiased;
+    background-color: var(--bgDesktop);
 
 }
 
