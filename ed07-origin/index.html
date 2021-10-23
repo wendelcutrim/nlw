@@ -22,7 +22,7 @@
                 <img src="img/profile-picture.png" alt="Profile Picture">
             </div>
             <h1 id="cardUserName"></h1>
-            <a href="https://www.github.com/wendeldim" target="_blank">
+            <a href="https://www.github.com/wendelcutrim" target="_blank">
                 <img src="/img/github.svg" alt="Github Icon">
                 wendeldim</a>
 
@@ -57,36 +57,7 @@
             </ul>
         </div>
     </main>
-    <script>
-
-        const socialMediaUserLink = {
-            github: "wendelcutrim",
-            youtube: "wendeldim",
-            facebook: "wendelcutrim",
-            instagram: "wendeldim",
-            twitter: "wendelcutrim",
-        };
-        
-        /* O DOM Document Object Model, serve para inserirmos os dados de js no html. No exemplo abaixo, estamos atribuindo o nome do cartão por javascript, onde criamos a variável userName, e dentro do H1 criamos o id cardUserName, em seguida criamos uma arrow function para atribuir o userName automaticamente usando o DOM com o método textContent.*/
-
-        let userName = 'Wendel Cutrim';
-
-        const createUserName = (name) => {
-            document.getElementById('cardUserName').textContent = name;
-        };
-
-        createUserName(userName);
-
-        function changeSocialMediaLink() {
-            for (let li of socialLinks.children) {
-                const social = li.getAttribute('class');
-
-                li.children[0].href = `https://${social}.com/${socialMediaUserLink[social]}`
-            }
-        };
-
-        changeSocialMediaLink();
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
