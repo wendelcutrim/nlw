@@ -21,42 +21,72 @@
                 </span>
                 <img src="img/profile-picture.png" alt="Profile Picture">
             </div>
-            <h1>Wendel Cutrim</h1>
-            <a href="https://www.instagram.com/wendeldim" target="_blank">
+            <h1 id="cardUserName"></h1>
+            <a href="https://www.github.com/wendeldim" target="_blank">
                 <img src="/img/github.svg" alt="Github Icon">
                 wendeldim</a>
 
             <p>Tech lover!👨‍💻
                 <br>
-                    Bachelor in Aeronautical Sciences🛩️
+                Bachelor in Aeronautical Sciences🛩️
                 <br>
-                    Coffe is my life ☕
+                Coffe is my life ☕
             </p>
 
-            <ul>
-                <li>
-                    <a href="https://www.youtube.com/user/wendeldim" target="_blank">
+            <ul id="socialLinks">
+                <li class="youtube">
+                    <a href="https://www.youtube.com/aaa" target="_blank">
                         <img src="img/youtube.svg" alt="Youtube Icon">
                     </a>
                 </li>
-                <li>
-                    <a href="https://www.facebook.com/wendelcutrim" target="_blank">
+                <li class="facebook">
+                    <a href="https://www.facebook.com/aaa" target="_blank">
                         <img src="img/facebook.svg" alt="Facebook Icon">
                     </a>
                 </li>
-                <li>
-                    <a href="https://www.instagram.com/wendeldim" target="_blank">
+                <li class="instagram">
+                    <a href="https://www.instagram.com/aaa" target="_blank">
                         <img src="img/instagram.svg" alt="Instagram Icon">
                     </a>
                 </li>
-                <li>
-                    <a href="https://twitter.com/wendelcutrim" target="_blank">
+                <li class="twitter">
+                    <a href="https://twitter.com/aaa" target="_blank">
                         <img src="img/twitter.svg" alt="Twitter Icon">
                     </a>
                 </li>
             </ul>
         </div>
     </main>
+    <script>
+
+        const socialMediaUserLink = {
+            github: "wendelcutrim",
+            youtube: "wendeldim",
+            facebook: "wendelcutrim",
+            instagram: "wendeldim",
+            twitter: "wendelcutrim",
+        };
+        
+        /* O DOM Document Object Model, serve para inserirmos os dados de js no html. No exemplo abaixo, estamos atribuindo o nome do cartão por javascript, onde criamos a variável userName, e dentro do H1 criamos o id cardUserName, em seguida criamos uma arrow function para atribuir o userName automaticamente usando o DOM com o método textContent.*/
+
+        let userName = 'Wendel Cutrim';
+
+        const createUserName = (name) => {
+            document.getElementById('cardUserName').textContent = name;
+        };
+
+        createUserName(userName);
+
+        function changeSocialMediaLink() {
+            for (let li of socialLinks.children) {
+                const social = li.getAttribute('class');
+
+                li.children[0].href = `https://${social}.com/${socialMediaUserLink[social]}`
+            }
+        };
+
+        changeSocialMediaLink();
+    </script>
 </body>
 
 </html>
