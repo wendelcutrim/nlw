@@ -6,14 +6,6 @@ const socialMediaUserLink = {
     linkedin: "in/wendel-cutrim-766643174",
 };
 
-/* let userName = 'Wendel Cutrim';
-
-const createUserName = (name) => {
-    document.getElementById('cardUserName').textContent = name;
-};
-
-createUserName(userName); */
-
 const changeSocialMediaLink = () => {
     for (let li of socialLinks.children) {
         const social = li.getAttribute('class');
@@ -26,8 +18,6 @@ changeSocialMediaLink();
 
 const getGitHubProfileInfos = () => {
     const url = `https://api.github.com/users/${socialMediaUserLink.github}`
-
-    /* O fetch serve para acessar a URL e retornar o que ela responder, mas ele não responde em JSON*/
 
     fetch(url)
         .then(response => response.json())
